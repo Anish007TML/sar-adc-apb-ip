@@ -216,10 +216,3 @@ docs/
 * Foreground digital calibration of capacitor mismatch.
 * UVM testbench with functional coverage; asynchronous SAR variant (comparator-self-timed).
 * DMA request output and multi-channel input mux.
-
----
-
-**Author:** Anish · Electronics engineering student ·
-background in analog / RF CMOS design (180 nm, Cadence Virtuoso & Spectre)
-
-License: MIT
