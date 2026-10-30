@@ -1,0 +1,10 @@
+# Yosys synthesis script - SAR ADC APB IP (technology-independent)
+#   run:  yosys -s syn/synth.ys    (or: make synth)
+read_verilog -sv rtl/sar_ctrl.v rtl/adc_apb_regs.v rtl/sar_adc_ip.v
+hierarchy -check -top sar_adc_ip
+synth -top sar_adc_ip -flatten
+abc -g AND,NAND,OR,NOR,XOR,XNOR,MUX
+opt_clean
+tee -o build/synth_stat.txt stat
+check -assert
+write_verilog -noattr build/sar_adc_ip_netlist.v
